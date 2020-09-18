@@ -10,12 +10,14 @@ class HomeContainer extends ReactComponent
 
     addTodo: (title) => {
 
-        const newState = this.state.todos.push(title)
-        this.setState({ todos: newState })
+        const  newState = this.state.todos.push(title)
+        this.setState({ todos: newState }) 
+    }
 
 render()
 {
-    return <HomeScreen addTodo={this.addTodo} />
+    return <HomeScreen addTodo={this.addTodo
+    } />
 
 }
 
