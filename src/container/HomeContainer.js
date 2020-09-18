@@ -1,18 +1,31 @@
 import { ReactComponent } from '*.svg';
-import React from 'react';
+import React, { Component } from 'react';
 import HomeScreen from '../screens/HomeScreen';
 
-class HomeContainer extends ReactComponent
+class HomeContainer extends Component
 {
-    state = {
-        todos: []
+    constructor(props)
+    {
+        super()
+        this.state = {
+            todos: []
+        }
     }
 
-    addTodo: (title) => {
+    addTodo: (title) =>
+        {
 
-        const  newState = this.state.todos.push(title)
-        this.setState({ todos: newState }) 
-    }
+    const newState = this.state.todos.push(title)
+    this.setState({ todos: newState })
+}
+
+delTodo: (title) =>
+{
+
+    const newState = this.state.todos.delTodo(title)
+    this.setState({ todos: newState })
+
+}
 
 render()
 {
@@ -21,4 +34,4 @@ render()
 
 }
 
-export default HomeContainer
+export default HomeContainer;
