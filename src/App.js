@@ -7,9 +7,6 @@ import HomeContainer from './container/HomeContainer';
 
 class App extends Component
 {
-    state = {
-        todos: []
-    }
 
     componentDidMount()
     {

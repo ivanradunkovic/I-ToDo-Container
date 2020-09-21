@@ -1,11 +1,19 @@
-import { ReactComponent } from '*.svg';
 import React from 'react';
 import AddTodo from '../components/AddTodo';
 import Todos from '../components/Todos';
 import Header from '../layout/Header';
 
-class HomeScreen extends ReactComponent
+class HomeScreen extends React.Component
 {
+
+    constructor(props)
+    {
+        super()
+        this.state = {
+            todos: []
+        }
+    }
+
 
     render()
     {
@@ -14,12 +22,11 @@ class HomeScreen extends ReactComponent
             <br />
             <React.Fragment>
                 <AddTodo addTodo={this.props.addTodo} />
-                <Todos todos={this.state.todos} markComplete={this.markComplete} delTodo={this.delTodo} />
+                <Todos todos={this.props.todos} markComplete={this.markComplete} delTodo={this.delTodo} />
             </React.Fragment>
-
         </div>
         )
     }
 }
 
-export default HomeScreen
+export default HomeScreen;

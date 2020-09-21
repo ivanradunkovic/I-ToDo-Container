@@ -1,4 +1,3 @@
-import { ReactComponent } from '*.svg';
 import React, { Component } from 'react';
 import HomeScreen from '../screens/HomeScreen';
 
@@ -12,25 +11,33 @@ class HomeContainer extends Component
         }
     }
 
-    addTodo: (title) =>
-        {
+    addTodo = (title) =>
+    {
 
-    const newState = this.state.todos.push(title)
-    this.setState({ todos: newState })
-}
+        const newState = this.state.todos.push(title)
+        this.setState({ todos: newState })
+    }
 
-delTodo: (title) =>
-{
+    delTodo = (title) =>
+    {
 
-    const newState = this.state.todos.delTodo(title)
-    this.setState({ todos: newState })
+        const newState = this.state.todos.delTodo(title)
+        this.setState({ todos: newState })
 
-}
+    }
 
-render()
-{
-    return <HomeScreen addTodo={this.addTodo
-    } />
+    markComplete = (title) =>
+    {
+        const newState = this.state.todos.markComplete(title)
+        this.setState({ todos: newState })
+    }
+
+    render()
+    {
+        return <HomeScreen todo={this.state.todos} addTodo={this.addTodo
+        } delTodo={this.delTodo} markComplete={this.markComplete} />
+
+    }
 
 }
 
